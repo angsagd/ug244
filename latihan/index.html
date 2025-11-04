@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Latihan 8 — Dasar CSS</title>
+  <meta name="description" content="Dokumen latihan CSS sederhana untuk selector dasar, box model, layout, dan form." />
+  <link rel="stylesheet" href="style.css" />
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">GDE SASTRAWANGSA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">1100.00000000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">GDE SASTRAWANGSA</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x01010005FD05E276DE374BAC740C079565AB9F</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body id="top">
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <h1 id="judul-utama" class="judul">Latihan 8: Dasar CSS</h1>
+      <p class="tagline">Fokus: selector type, class, id; box model; layout dasar.</p>
+    </div>
+
+    <nav class="main-nav" aria-label="Navigasi utama">
+      <ul class="menu">
+        <li class="menu__item"><a class="menu__link is-active" href="#beranda">Beranda</a></li>
+        <li class="menu__item"><a class="menu__link" href="#artikel">Artikel</a></li>
+        <li class="menu__item"><a class="menu__link" href="#formulir">Form</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="site-main" role="main">
+    <!-- Hero ringkas -->
+    <section id="beranda" class="hero">
+      <h2 class="hero__title">Mulai dari Struktur Sederhana</h2>
+      <p class="lead">Latihan ini menyiapkan elemen minimal agar mudah dipraktikkan dan diinspeksi.</p>
+      <div class="actions">
+        <a class="btn" href="#artikel">Baca Artikel</a>
+        <a class="btn btn-ghost" href="#formulir">Isi Form</a>
+      </div>
+    </section>
+
+    <!-- Layout dua kolom sederhana -->
+    <div class="layout layout--content">
+      <section id="artikel" class="content" aria-labelledby="judul-artikel">
+        <h2 id="judul-artikel">Artikel Ringkas</h2>
+
+        <article class="card" id="artikel-1">
+          <header class="card__header">
+            <h3 class="card__title">Pengantar Box Model</h3>
+          </header>
+          <p>
+            Setiap elemen adalah kotak yang terdiri dari <strong>content</strong>, <strong>padding</strong>,
+            <strong>border</strong>, dan <strong>margin</strong>. Atur jarak dan ukuran menggunakan properti tersebut.
+          </p>
+          <pre><code>.box { padding: 12px; border: 1px solid #ddd; margin: 12px 0; }</code></pre>
+        </article>
+
+        <article class="card" id="artikel-2">
+          <header class="card__header">
+            <h3 class="card__title">Selector Dasar</h3>
+          </header>
+          <p>
+            Gunakan selector <em>type</em> (mis. <code>p</code>), <em>class</em> (mis. <code>.btn</code>), dan
+            <em>id</em> (mis. <code>#judul-utama</code>) untuk menargetkan elemen.
+          </p>
+          <ul>
+            <li><code>p { line-height: 1.6; }</code></li>
+            <li><code>.highlight { background: #fff3cd; }</code></li>
+            <li><code>#artikel-2 { border-color: #cce; }</code></li>
+          </ul>
+        </article>
+
+        <!-- Tabel sederhana untuk zebra dan padding sel -->
+        <figure>
+          <figcaption>Contoh Tabel Sederhana</figcaption>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Properti</th>
+                <th>Contoh Nilai</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>margin</td>
+                <td>16px</td>
+              </tr>
+              <tr>
+                <td>padding</td>
+                <td>8px 12px</td>
+              </tr>
+              <tr>
+                <td>border</td>
+                <td>1px solid #ddd</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+      </section>
+
+      <aside class="sidebar" aria-label="Sampingan">
+        <section class="widget">
+          <h2 class="widget__title">Catatan</h2>
+          <p class="highlight">Latih selector type, class, dan id pada elemen di halaman ini.</p>
+        </section>
+
+        <section class="widget">
+          <h2 class="widget__title">Daftar Tugas</h2>
+          <ol>
+            <li>Ganti warna judul utama menggunakan <code>#judul-utama</code>.</li>
+            <li>Atur jarak kartu artikel dengan class <code>.card</code>.</li>
+            <li>Ubah tipografi paragraf melalui selector <code>p</code>.</li>
+          </ol>
+        </section>
+      </aside>
+    </div>
+
+    <!-- Form minimal -->
+    <section id="formulir" class="section" aria-labelledby="judul-form">
+      <h2 id="judul-form">Form Umpan Balik</h2>
+      <form class="form" action="#" method="post" novalidate>
+        <div class="form-row">
+          <label for="nama">Nama</label>
+          <input id="nama" name="nama" type="text" placeholder="Nama lengkap" />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="nama@contoh.com" />
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Kirim</button>
+          <button class="btn btn-ghost" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p><small>&copy; <time datetime="2025">2025</time> — Dokumen latihan CSS dasar.</small></p>
+    <p class="back-to-top"><a href="#top">Kembali ke atas</a></p>
+  </footer>
+</body>
+</html>

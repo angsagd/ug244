@@ -1,0 +1,273 @@
+/* =========================================================
+   STYLE.CSS – TEMPLATE LATIHAN 9
+   Front-End Web Development – Modul CSS Dasar
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. RESET & VARIABEL DASAR
+   --------------------------------------------------------- */
+:root {
+  /* Warna utama situs */
+  --color-bg: #ffffff;
+  --color-text: #222222;
+  --color-accent: #0055cc;
+  --color-accent-light: #e8f0ff;
+  --color-border: #dddddd;
+
+  /* Tipografi */
+  --font-sans: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Courier New", monospace;
+
+  /* Ukuran umum */
+  --container-width: 1200px;
+  --radius: 6px;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Reset dasar untuk konsistensi antar browser */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Link */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+   2. STRUKTUR UTAMA
+   --------------------------------------------------------- */
+header,
+main,
+footer {
+  width: 100%;
+}
+
+.site-header {
+  background: var(--color-accent-light);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+  padding: 1rem 2rem;
+}
+
+.site-main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.site-footer {
+  background: var(--color-accent-light);
+  border-top: 1px solid var(--color-border);
+  padding: 2rem;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------
+   3. NAVIGASI
+   --------------------------------------------------------- */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.main-nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  transition: background 0.3s;
+}
+.main-nav a:hover {
+  background-color: var(--color-accent-light);
+}
+.menu__link.is-active {
+  font-weight: bold;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* ---------------------------------------------------------
+   4. TYPOGRAFI DASAR
+   --------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+p {
+  margin-bottom: 1rem;
+}
+.lead {
+  font-size: 1.1rem;
+  color: #444;
+}
+code,
+kbd {
+  font-family: var(--font-mono);
+  background: #f5f5f5;
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius);
+}
+
+/* ---------------------------------------------------------
+   5. LAYOUT & BOX MODEL
+   --------------------------------------------------------- */
+.layout--content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.content {
+  flex: 3 1 60%;
+}
+.sidebar {
+  flex: 1 1 30%;
+}
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------------------------------------------------------
+   6. FORM & INPUT
+   --------------------------------------------------------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+label {
+  font-weight: 500;
+}
+input,
+select,
+textarea {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent-light);
+}
+button,
+.btn {
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover,
+.btn:hover {
+  background-color: #0042a0;
+}
+
+/* ---------------------------------------------------------
+   7. TABEL
+   --------------------------------------------------------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+}
+th,
+td {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+thead {
+  background-color: var(--color-accent-light);
+}
+tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+/* ---------------------------------------------------------
+   8. UTILITAS & RESPONSIVITAS
+   --------------------------------------------------------- */
+.section {
+  margin-block: 3rem;
+}
+.text-center {
+  text-align: center;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Media Query contoh */
+@media (max-width: 768px) {
+  .layout--content {
+    flex-direction: column;
+  }
+  .main-nav ul {
+    flex-direction: column;
+  }
+}
+
+/* ---------------------------------------------------------
+   9. AREA EKSPERIMEN
+   Gunakan bagian ini untuk latihan selector lanjutan, pseudo-class,
+   pseudo-element, transition, transform, dan lainnya.
+   --------------------------------------------------------- */
+
+/* Contoh pseudo-class */
+a:hover::after {
+  content: " ↗";
+}
+
+/* Contoh efek hover card */
+.card-grid .card:hover {
+  background-color: var(--color-accent-light);
+}
+
+/* ---------------------------------------------------------
+   10. AKHIR FILE
+   --------------------------------------------------------- */
