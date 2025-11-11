@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body id="root">
+  
+  <div id="container">
+    <h2>Judul Artikel</h2>
+    <p class="intro">Paragraf pembuka.</p>
+    <ul id="list">
+      <li class="item">Satu</li>
+      <li class="item">Dua</li>
+      <li class="item">Tiga</li>
+    </ul>
+
+    <p>Lorem ipsum dolor, <b>sit amet consectetur</b> adipisicing elit. Excepturi, iure?</p>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+
+  </div>
+
+  <button id="addPar">Add Paragraf</button>
+  <button id="scanBtn">Scan DOM</button>
+  <pre id="output"></pre>
+
+  <script>
+    const container = document.getElementById("container");
+
+    console.log(container.nodeName);   // DIV
+    console.log(container.nodeType);   // 1 (element node)
+    console.log(container.children.length);   // jumlah anak
+
+    const root = document.getElementById("root");
+    const btn = document.getElementById("scanBtn");
+    const output = document.getElementById("output");
+
+    document.getElementById("addPar").addEventListener("click", () => {
+      let newPar = document.createElement("p");
+      newPar.innerText = "some sentences";
+      container.appendChild(newPar);
+    });
+
+    btn.addEventListener("click", () => {
+      output.textContent = ""; // reset hasil
+      traverse(root, 0);
+    });
+
+    function traverse(node, depth) {
+      let indent = "  ".repeat(depth);
+      output.textContent += `${indent}+ ${node.nodeName.toLowerCase()}\n`;
+      for (let child of node.children) {
+        traverse(child, depth + 1);
+      }
+    }
+  </script>
+</body>
+</html>
