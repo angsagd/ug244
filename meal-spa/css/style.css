@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+  font-family: Nunito, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+header {
+  background-color: #345;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+main {
+  padding: 20px;
+}
+section {
+  margin: 30px 0;
+}
+
+#meal-browse {
+  text-align: center;
+  margin: 20px 0;
+}
+.meal-letter a {
+  margin: 0 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: x-large;
+  color: #345;
+}
+.meal-letter a:hover,
+.card-title a:hover {
+  color: #c32;
+}
+.meal-search {
+  margin-top: 10px;
+}
+.meal-search input {
+  padding: 5px;
+  width: 200px;
+}
+.meal-search button {
+  padding: 5px 10px;
+  background-color: #345;
+  color: #fff;
+  cursor: pointer;  
+}
+
+#meal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 200px;
+  box-shadow: 1px 2px 5px #ccc;
+}
+.card-image img {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+.card-title {
+  padding: 10px;
+  text-align: center;
+}
+.card-title a {
+  text-decoration: none;
+  color: #345;
+  font-weight: bold;
+}
