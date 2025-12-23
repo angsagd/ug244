@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage</title>
+  <style>
+    section {
+      padding: 20px 0px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    button[type="button"] {
+      padding: 10px;
+    }
+    button[type="button"] + div {
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Latihan Local Storage</h1>
+  </header>
+  <main>
+    <section>
+      <input type="text" name="info" placeholder="Type something ..." id="info" autofocus>
+    </section>
+    <section>
+      <button type="button" id="get">Get Local Storage</button>
+      <div></div>
+    </section>
+    <section>
+      <button type="button" id="clear">Clear Local Storage</button>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // cek local storage
+      document.getElementById("info").value = localStorage.getItem("info") || "";
+
+      // input informasi dan menyimpan ke local storage
+      document.getElementById("info").addEventListener("input", function (event) {
+        let info = event.target.value;
+        localStorage.setItem("info", info);
+      });
+
+      // output informasi yang diambil dari local storage
+      document.getElementById("get").addEventListener("click", function (event) {
+        let info = localStorage.getItem("info");
+        event.target.nextElementSibling.innerText = info;
+      });
+
+      // clear informasi yang ada pada local storage
+      document.getElementById("clear").addEventListener("click", function () {
+        localStorage.clear();
+      });
+
+    });
+  </script>
+</body>
+</html>
