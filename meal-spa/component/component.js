@@ -1,0 +1,38 @@
+function mealBrowser() {
+      return `
+    <section id="meal-browse">
+      <div class="meal-letter">
+        <a href="#/letter/a">A</a>
+        <a href="#/letter/b">B</a>
+        <a href="#/letter/c">C</a>
+        <a href="#/letter/d">D</a>
+        <a href="#/letter/e">E</a>
+        <a href="#/letter/f">F</a>
+        <a href="#/letter/g">G</a>
+        <a href="#/letter/h">H</a>
+        <a href="#/letter/i">I</a>
+        <a href="#/letter/j">J</a>
+        <a href="#/letter/k">K</a>
+        <a href="#/letter/l">L</a>
+        <a href="#/letter/m">M</a>
+        <a href="#/letter/n">N</a>
+        <a href="#/letter/o">O</a>
+        <a href="#/letter/p">P</a>
+        <a href="#/letter/q">Q</a>
+        <a href="#/letter/r">R</a>
+        <a href="#/letter/s">S</a>
+        <a href="#/letter/t">T</a>
+        <a href="#/letter/u">U</a>
+        <a href="#/letter/v">V</a>
+        <a href="#/letter/w">W</a>
+        <a href="#/letter/x">X</a>
+        <a href="#/letter/y">Y</a>
+        <a href="#/letter/z">Z</a>
+      </div>
+      <div class="meal-search">
+        <input type="text" id="meal-search-keyword" name="keyword" placeholder="Type something ...">
+        <button type="button" id="meal-search-button">Search</button>
+      </div>
+    </section>
+    `;
+}
