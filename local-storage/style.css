@@ -12,7 +12,8 @@ body.large { font-size: 18px; }
 #content .item {
   border: 1px solid #c33;
   border-radius: 6px;
-  padding: 20px 0px;
+  padding: 20px 10px;
+  background-color: #696;
 }
 
 #content.list .item {
